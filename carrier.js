@@ -3,17 +3,17 @@ var multiplex = require('multiplex')
 var uuid = require('uuid');
 
 var multiplex = require('multiplex')
-var websocketStream = require('websocket-stream')
+var websocketStream = require('./ws_stream')
 var url = require('url')
 
 var opts = {
     max: 3, // maximum size of the pool
     min: 1, // minimum size of the pool
-    acquireTimeoutMillis: 5000
+    acquireTimeoutMillis: 15000,
+    testOnBorrow: true
 }
 
 var HttpsProxyAgent = require('https-proxy-agent')
-
 
 var HTTPPROXY = process.env.http_proxy
 
@@ -21,11 +21,14 @@ if (HTTPPROXY) {
     console.log("http proxy:", HTTPPROXY)
 }
 
+var i = 0;
+
 var cfg = {
     create: function (config) {
 
         return new Promise(function (resolve, reject) {
 
+            i+= 1;
             var agent = null
 
             if (HTTPPROXY) {
@@ -39,28 +42,31 @@ var cfg = {
             var ws = new websocketStream(config.ws_url, {
                 agent: agent
             });
-
+            
             var plex = multiplex();
 
+            var resource = {
+                ws: ws,
+                plex: plex,
+                id: i
+            }
+
             ws.socket.on('open', function () {
-                resolve({
-                    ws: ws,
-                    plex: plex
-                });
+                resolve(resource);
             });
 
             function onReject() {
-                reject()
+                reject();
+                resource.plex.destroy();
+                resource.ws.destroy();
             }
 
             ws.on('end', function () {
-                reject()
+                onReject()
             });
 
             plex.pipe(ws)
             ws.pipe(plex)
-
-            ws.on('error', onReject)
 
             ws.socket.on('error', onReject)
             ws.socket.on('unexpected-response', onReject)
@@ -68,15 +74,23 @@ var cfg = {
     },
 
     destroy: function (resource) {
+        return new Promise(function (resolve) {
+            resource.plex.destroy();
+            resource.ws.destroy();
+            resolve();
+        });
+    },
+
+    validate: function (resource) {
 
         return new Promise(function (resolve) {
-
-            function onDone() {
-                resolve();
+            if (resource.ws.destroyed === false &&
+                resource.plex.destroyed === false) {
+                resolve(true);
+            } else {
+                console.log('resource outdated');
+                resolve(false);
             }
-
-            resource.ws.on('end', onDone)
-            resource.ws.on('error', onDone)
         });
     }
 }
@@ -86,11 +100,12 @@ function carrierPool(config) {
 
     var pool_config = {
         create: cfg.create.bind(null, config),
-        destroy: cfg.destroy
+        destroy: cfg.destroy,
+        validate: cfg.validate
     }
 
     var myPool = genericPool.createPool(pool_config, opts)
-
+ 
     return myPool;
 }
 

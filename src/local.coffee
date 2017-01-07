@@ -74,10 +74,10 @@ carrierPool = carrier.carrierPool({
 })
 
 server = net.createServer (connection) ->
-  console.log "local connected"
-  server.getConnections (err, count) ->
-    console.log "concurrent connections:", count
-    return
+  # console.log "local connected"
+  # server.getConnections (err, count) ->
+  #   console.log "concurrent connections:", count
+  #   return
   encryptor = new Encryptor(KEY, METHOD)
   stage = 0
   headerLength = 0
@@ -157,7 +157,15 @@ server = net.createServer (connection) ->
           addrToSendBuf = new Buffer(addrToSend, "binary")
           encData = encryptor.encrypt(addrToSendBuf)
           subStream.write(encData)
-          carrierPool.release(resource)
+          
+          process.nextTick(->
+            if resource.ws._writableState.writing is false
+              carrierPool.release(resource)
+            else
+              resource.ws.once('send-complete', ->
+                carrierPool.release(resource)
+              )
+          )
           
           subStream.on('data', (dataRaw) ->
             data = encryptor.decrypt(dataRaw)
@@ -178,6 +186,9 @@ server = net.createServer (connection) ->
           stage = 5
         ))
 
+        .catch((e)->
+          console.log(e, 'resource failed')
+        )
 
         if data.length > headerLength
           buf = new Buffer(data.length - headerLength)
@@ -202,9 +213,9 @@ server = net.createServer (connection) ->
   connection.on "error", (e)->
     console.log "local error: #{e}"
     subStream.end() if subStream
-    server.getConnections (err, count) ->
-      console.log "concurrent connections:", count
-      return
+    # server.getConnections (err, count) ->
+    #   console.log "concurrent connections:", count
+    #   return
 
 
   connection.setTimeout timeout, ->

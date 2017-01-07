@@ -123,10 +123,6 @@
 
   server = net.createServer(function(connection) {
     var addrLen, addrToSend, cachedPieces, encryptor, headerLength, remoteAddr, remotePort, resourcePromise, stage, subStream;
-    console.log("local connected");
-    server.getConnections(function(err, count) {
-      console.log("concurrent connections:", count);
-    });
     encryptor = new Encryptor(KEY, METHOD);
     stage = 0;
     headerLength = 0;
@@ -198,7 +194,15 @@
             addrToSendBuf = new Buffer(addrToSend, "binary");
             encData = encryptor.encrypt(addrToSendBuf);
             subStream.write(encData);
-            carrierPool.release(resource);
+            process.nextTick(function() {
+              if (resource.ws._writableState.writing === false) {
+                return carrierPool.release(resource);
+              } else {
+                return resource.ws.once('send-complete', function() {
+                  return carrierPool.release(resource);
+                });
+              }
+            });
             subStream.on('data', function(dataRaw) {
               data = encryptor.decrypt(dataRaw);
               return connection.write(data);
@@ -216,6 +220,8 @@
             }
             cachedPieces = null;
             return stage = 5;
+          })["catch"](function(e) {
+            return console.log(e, 'resource failed');
           });
           if (data.length > headerLength) {
             buf = new Buffer(data.length - headerLength);
@@ -244,11 +250,8 @@
     connection.on("error", function(e) {
       console.log("local error: " + e);
       if (subStream) {
-        subStream.end();
+        return subStream.end();
       }
-      return server.getConnections(function(err, count) {
-        console.log("concurrent connections:", count);
-      });
     });
     return connection.setTimeout(timeout, function() {
       console.log("local timeout");
