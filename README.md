@@ -76,6 +76,6 @@ Heroku 在创建项目的时候可以通过关联 GitHub 账号，直接部署 G
 
     ![](https://github.com/521xueweihan/shadowsocks-heroku/blob/master/img/7-min.png)
 
-## 六、送人玫瑰手留余香🌹（原作者）
+## 六、送人玫瑰手留余香🌹（[原作者](https://github.com/521xueweihan/shadowsocks-heroku/tree/master)）
 
 ![](https://github.com/521xueweihan/shadowsocks-heroku/blob/master/img/weixin.png)
