@@ -4,8 +4,6 @@
 [Heroku](https://www.heroku.com/) 是一个支持多种编程语言的云平台即服务，shadowsocks-heroku 则是可部署在 Heroku 平台的 ss 服务。
 和 [shadowsocks](https://github.com/clowwindy/shadowsocks) 不同的是 shadowsocks-heroku 使用的 WebSocket 代替原本的 sockets。
 
-花几分钟就可以 Google 了👻。
-
 ## 如果遇到问题
 1. 请先检查是否遵循步骤（再次阅读一遍教程）
 2. 请先自行通过搜索引擎寻找答案
@@ -25,6 +23,7 @@ Heroku 提供免费账号，部分介绍如下：
 点击 [![](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/onplus/shadowsocks-heroku/tree/re) 一键部署
 
 设置 加密算法和app 密码
+
 ![default](https://user-images.githubusercontent.com/31188782/31310674-e783c9e4-abce-11e7-87d2-48f328e74169.JPG)
 
 支持的加密算法类型如下https://github.com/mrluanma/shadowsocks-heroku#supported-ciphers
@@ -37,7 +36,7 @@ Heroku 提供免费账号，部分介绍如下：
 5. 启动成功，命令行显示：`server listening at { address: '127.0.0.1', family: 'IPv4', port: 1080 }`
 
 ## 四、最后
-1. 下载：Chrome 浏览器 [SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega/releases/download/v2.3.21/SwitchyOmega.crx) 插件，如果下载地址失效，可以在本项目下的 download 下找到 `SwitchyOmega.crx` 文件
+1. 下载：Chrome 浏览器 [SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega/releases) 插件
 
 2. 安装：打开浏览器的扩展程序页面 `chrome://extensions`，把 `SwitchyOmega.crx` 文件拖放到浏览器扩展程序页面安装
 
@@ -47,15 +46,5 @@ Heroku 提供免费账号，部分介绍如下：
     代理服务器：127.0.0.1
     代理端口：1080
     ```
-
-    ![](https://github.com/521xueweihan/shadowsocks-heroku/blob/master/img/5-min.png)
-
-4. 选择代理（刚配置好的）
-
-    ![](https://github.com/521xueweihan/shadowsocks-heroku/blob/master/img/6-min.png)
-
-5. 现在你就可以访问 Google 了
-
-    ![](https://github.com/521xueweihan/shadowsocks-heroku/blob/master/img/7-min.png)
-
+    
 ## 送人玫瑰手留余香🌹（[原作者](https://github.com/521xueweihan/shadowsocks-heroku/tree/master)）
