@@ -40,7 +40,7 @@ Heroku 提供免费账号，部分介绍如下：
 
 2. 安装：打开浏览器的扩展程序页面 `chrome://extensions`，把 `SwitchyOmega.crx` 文件拖放到浏览器扩展程序页面安装
 
-3. 配置：SwitchyOmega，如下图：
+3. 配置：SwitchyOmega
     ```
     代理协议：SOCKS5
     代理服务器：127.0.0.1
