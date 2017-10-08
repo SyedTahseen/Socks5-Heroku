@@ -20,9 +20,9 @@ Heroku 提供免费账号，部分介绍如下：
 用作 VPS 是够了，注册地址：https://signup.heroku.com/
 
 ## 二、部署
-点击 [![](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/onplus/shadowsocks-heroku/tree/re) 一键部署
+1. 点击 [![](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/onplus/shadowsocks-heroku/tree/re) , 一键部署到heroku
 
-设置 加密算法和app 密码
+1. 设置 加密算法和app 密码
 
 ![default](https://user-images.githubusercontent.com/31188782/31310674-e783c9e4-abce-11e7-87d2-48f328e74169.JPG)
 
@@ -46,5 +46,6 @@ Heroku 提供免费账号，部分介绍如下：
     代理服务器：127.0.0.1
     代理端口：1080
     ```
-    
+4. 可选：cow/meow  https://github.com/cyfdecyf/cow#cow-climb-over-the-wall-proxy
+  
 ## 送人玫瑰手留余香🌹（[原作者](https://github.com/521xueweihan/shadowsocks-heroku/tree/master)）
