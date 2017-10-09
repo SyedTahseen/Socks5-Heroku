@@ -24,8 +24,9 @@ Heroku 提供免费账号，部分介绍如下：
 1. 点击 [![](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/onplus/shadowsocks-heroku/tree/re) , 一键部署到heroku
 
 1. 设置 加密算法和app 密码
+![deploy](https://user-images.githubusercontent.com/31188782/31343896-ab0a868a-ad43-11e7-8a83-369cf5e385b0.jpg)
 
-![default](https://user-images.githubusercontent.com/31188782/31310674-e783c9e4-abce-11e7-87d2-48f328e74169.JPG)
+[](https://user-images.githubusercontent.com/31188782/31310674-e783c9e4-abce-11e7-87d2-48f328e74169.JPG)
 
 支持的加密算法类型如下https://github.com/mrluanma/shadowsocks-heroku#supported-ciphers
 
