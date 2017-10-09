@@ -7,7 +7,7 @@
 ## 如果遇到问题
 1. 请先检查是否遵循步骤（再次阅读一遍教程）
 2. 请先自行通过搜索引擎寻找答案
-3. 如果还没有解决，欢迎创建[ issue](https://github.com/onplus/shadowsocks-heroku/issues/new) 提问
+3. 如果还没有解决，欢迎创建[ issue](https://github.com/onplus/shadowsocks-heroku/issues/new) 提问（贴日志和配置的时候注意隐藏app地址和密码等敏感信息）
 
 ## 一、准备
 
