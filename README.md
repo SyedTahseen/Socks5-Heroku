@@ -17,8 +17,9 @@ Heroku 提供免费账号，部分介绍如下：
 - Free apps sleep automatically after 30 mins of inactivity to conserve your dyno hours
 - Free apps wake automatically when a web request is received
 - https://devcenter.heroku.com/articles/limits
+- https://devcenter.heroku.com/articles/free-dyno-hours#usage
 
-用作 VPS 是够了，注册地址：https://signup.heroku.com/
+注册地址：https://signup.heroku.com/ （注册和部署过程可能需要梯子[#10](https://github.com/onplus/shadowsocks-heroku/issues/10)）
 
 ## 部署
 1. 点击 [![](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/onplus/shadowsocks-heroku/tree/re) 一键部署到heroku
@@ -46,11 +47,12 @@ Heroku 提供免费账号，部分介绍如下：
 2. 安装：打开浏览器的扩展程序页面 `chrome://extensions`，把 `SwitchyOmega.crx` 文件拖放到浏览器扩展程序页面安装
 
 3. 配置：SwitchyOmega
-    ```
-    代理协议：SOCKS5
-    代理服务器：127.0.0.1
-    代理端口：1080
-    ```
+```
+    代理协议： SOCKS5
+    代理服务器local_address：127.0.0.1 
+    代理端口local_port： 1080 
+```
+    
 ## 可选：
 1. 使用无污染DNS https://www.zhihu.com/question/32229915
 2. cow/meow  https://github.com/cyfdecyf/cow#cow-climb-over-the-wall-proxy
