@@ -42,11 +42,11 @@ Heroku 提供免费账号，部分介绍如下：
 5. 启动成功，命令行显示：`server listening at { address: '127.0.0.1', family: 'IPv4', port: 1080 }`
 
 ## 配置代理
-1. 下载：Chrome 浏览器 [SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega/releases) 插件
+1. 下载：Chrome 浏览器 [SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega/releases) 插件（[参考教程](https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList)）
 
 2. 安装：打开浏览器的扩展程序页面 `chrome://extensions`，把 `SwitchyOmega.crx` 文件拖放到浏览器扩展程序页面安装
 
-3. 配置：SwitchyOmega
+3. 配置：添加SwitchyOmega代理服务器
 ```
     代理协议： SOCKS5
     代理服务器local_address：127.0.0.1 
