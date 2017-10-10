@@ -19,7 +19,7 @@ Heroku 提供免费账号，部分介绍如下：
 - https://devcenter.heroku.com/articles/limits
 - https://devcenter.heroku.com/articles/free-dyno-hours#usage
 
-注册地址：https://signup.heroku.com/ （注册和部署过程可能需要梯子[#10](https://github.com/onplus/shadowsocks-heroku/issues/10)）
+注册地址：https://signup.heroku.com/ （注册和部署过程可能需要梯子[#10](https://github.com/onplus/shadowsocks-heroku/issues/10)，[#14](https://github.com/onplus/shadowsocks-heroku/issues/14)）
 
 ## 部署
 1. 点击 [![](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/onplus/shadowsocks-heroku/tree/re) 一键部署到heroku
@@ -57,4 +57,4 @@ Heroku 提供免费账号，部分介绍如下：
 1. 使用无污染DNS https://www.zhihu.com/question/32229915
 2. cow/meow  https://github.com/cyfdecyf/cow#cow-climb-over-the-wall-proxy
  
-## 送人玫瑰手留余香🌹（[原作者](https://github.com/521xueweihan/shadowsocks-heroku/tree/master)）
+## 送人玫瑰手留余香🌹（[参考教程](https://github.com/521xueweihan/shadowsocks-heroku/tree/master)）
