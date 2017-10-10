@@ -37,7 +37,7 @@ Heroku 提供免费账号，部分介绍如下：
 ## 启动本地 Client
 1. 下载release https://github.com/onplus/shadowsocks-heroku/releases （[备份](https://github.com/onplus/archive/tool/)）
 
-2. 修改config.json参数（主要是server，password和method），运行ss-h
+2. 修改config.json参数，运行ss-h.exe 或 start.vbs
 
 5. 启动成功，命令行显示：`server listening at { address: '127.0.0.1', family: 'IPv4', port: 1080 }`
 
@@ -55,6 +55,7 @@ Heroku 提供免费账号，部分介绍如下：
     
 ## 可选：
 1. 使用无污染DNS https://www.zhihu.com/question/32229915
-2. cow/meow  https://github.com/cyfdecyf/cow#cow-climb-over-the-wall-proxy
- 
+2. cow/meow智能代理  https://github.com/cyfdecyf/cow#cow-climb-over-the-wall-proxy
+3. 网站导航 http://www.ipv6daohang.com/
+
 ## 送人玫瑰手留余香🌹（[参考教程](https://github.com/521xueweihan/shadowsocks-heroku/tree/master)）
