@@ -79,7 +79,7 @@
     res.writeHead(200, {
       'Content-Type': 'text/plain'
     });
-    return res.end("https://github.com/onplus/shadowsocks-heroku");
+    return res.end("欢迎使用Heroku https://github.com/onplus/shadowsocks-heroku");
   });
 
   wss = new WebSocketServer({
