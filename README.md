@@ -56,6 +56,11 @@ Heroku 提供免费账号，部分介绍如下：
 ## 可选：
 1. 使用无污染DNS https://www.zhihu.com/question/32229915
 2. cow/meow智能代理  https://github.com/cyfdecyf/cow#cow-climb-over-the-wall-proxy
+```
+    #rc配置文件
+    listen = http://127.0.0.1:7777
+    proxy = socks5://127.0.0.1:1080
+```
 3. 网站导航 http://www.ipv6daohang.com/
 
 ## 送人玫瑰手留余香🌹（[参考教程](https://github.com/521xueweihan/shadowsocks-heroku/tree/master)）
