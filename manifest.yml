@@ -1,7 +1,7 @@
 applications:
 - name: ws
   memory: 128M
-  random-route: true
+  domain: us-south.cf.appdomain.cloud
   env:
     METHOD: aes-128-cfb
     KEY: wsss
