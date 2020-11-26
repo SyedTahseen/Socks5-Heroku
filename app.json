@@ -3,7 +3,7 @@
   "description": "Shadowsocks-Heroku",
   "env": {
     "METHOD": {
-      "description": "Encryption Algorithm",
+      "description": "Encryption Method",
       "value": "aes-256-cfb"
     },
     "KEY": {
