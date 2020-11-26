@@ -79,7 +79,7 @@
     res.writeHead(200, {
       'Content-Type': 'text/plain'
     });
-    return res.end("Welcome to Heroku https://github.com/onplus/shadowsocks-heroku");
+    return res.end("Welcome to your personal Socks5 Server! https://github.com/iTahseen/Socks5-Heroku");
   });
 
   wss = new WebSocketServer({
