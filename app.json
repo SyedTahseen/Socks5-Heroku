@@ -1,9 +1,9 @@
 {
-  "name": "shadowsocks-heroku",
-  "description": "shadowsocks-heroku",
+  "name": "Shadowsocks-Heroku",
+  "description": "Shadowsocks-Heroku",
   "env": {
     "METHOD": {
-      "description": "加密算法",
+      "description": "Encryption Method",
       "value": "aes-256-cfb"
     },
     "KEY": {
