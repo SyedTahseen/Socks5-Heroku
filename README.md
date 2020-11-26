@@ -6,7 +6,7 @@ Unlike [shadowsocks](https://github.com/clowwindy/shadowsocks), shadowsocks-hero
 
 ## If you encounter problems
 1. Please check if you follow the steps first (read the tutorial again)
-2. Please find the answer through Google/[Github](https://github.com/onplus/shadowsocks-heroku/search?utf8=%E2%9C%93&q=&type=)
+2. Please find the answer through Google/[Github](https://github.com/itahseen/socks5-heroku/search?utf8=%E2%9C%93&q=&type=)
 3. If it has not been resolved, please feel free to ask questions via [issue](https://github.com/onplus/shadowsocks-heroku/issues?q=is%3Aissue+is%3Aclosed+label%3Asolved) (posted log and configuration Pay attention to hiding the password & personal ip when)
 
 ## Prepare
@@ -22,7 +22,7 @@ Heroku provides free accounts, some of which are as follows:
 Registration address: https://signup.heroku.com/ (The registration and deployment process may require a ladder[#10](https://github.com/onplus/shadowsocks-heroku/issues/10), [#14]( https://github.com/onplus/shadowsocks-heroku/issues/14))
 
 ## Deployment
-1. Click [![](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/onplus/shadowsocks- heroku/tree/re), [One-click deployment to heroku](https://heroku.com/deploy?template=https://github.com/onplus/shadowsocks-heroku/tree/re)
+1. Click (https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/onplus/shadowsocks-heroku/tree/re), [One-click deployment to heroku]
   
  You can also choose another version of the server [shadowsocks-websocket-python](https://github.com/onplus/shadowsocks-websocket-python/blob/deploy/README.md); **Mobile users are recommended to deploy cross-platform Support better [v2ray](https://github.com/onplus/v2hero)**
 1. Set the encryption algorithm and app password
